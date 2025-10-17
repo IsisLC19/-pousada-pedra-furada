@@ -95,7 +95,6 @@
     "istanbul-lib-source-maps": "^5.0.6",
     "istanbul-reports": "^3.2.0",
     "jackspeak": "^3.4.3",
-    "jest": "^30.2.0",
     "jest-changed-files": "^30.2.0",
     "jest-circus": "^30.2.0",
     "jest-cli": "^30.2.0",
@@ -103,7 +102,6 @@
     "jest-diff": "^30.2.0",
     "jest-docblock": "^30.2.0",
     "jest-each": "^30.2.0",
-    "jest-environment-jsdom": "^30.2.0",
     "jest-environment-node": "^30.2.0",
     "jest-haste-map": "^30.2.0",
     "jest-leak-detector": "^30.2.0",
@@ -229,9 +227,17 @@
     "yargs-parser": "^21.1.1",
     "yocto-queue": "^0.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "Isis",
