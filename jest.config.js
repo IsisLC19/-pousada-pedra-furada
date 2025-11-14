@@ -1,13 +1,16 @@
-/** @type {import('jest').Config} */
-const config = {
-  testEnvironment: "jest-environment-jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  moduleNameMapper: {
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-  },
-  transform: {
-    "^.+\\.[jt]sx?$": "babel-jest", // transforma arquivos .js, .jsx, .ts e .tsx usando Babel
-  },
-};
-
-module.exports = config;
+/** @type {import('jest').Config} */ 
+const config = { 
+  testEnvironment: "jsdom", 
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], 
+  moduleNameMapper: { 
+    // ignora importações de CSS, imagens etc. durante o teste 
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy", 
+    "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js", 
+  }, 
+  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"], 
+  transform: { 
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest", 
+  }, 
+}; 
+ 
+module.exports = config; 
